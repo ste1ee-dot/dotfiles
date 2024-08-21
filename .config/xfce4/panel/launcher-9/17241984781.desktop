@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Web Browser
+Comment=
+Exec=exo-open --launch WebBrowser %u
+Icon=chromium-browser
+Path=
+Terminal=false
+StartupNotify=false
