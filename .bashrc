@@ -20,3 +20,5 @@ shopt -s autocd #Allows you to cd into directory just by name
 alias ll='exa --icons -a -x -s type'
 
 alias autoremove='pacman -Rcs $(pacman -Qdtq)'
+
+alias gitadd='git add . && git commit -m "Added with alias" && git push'
