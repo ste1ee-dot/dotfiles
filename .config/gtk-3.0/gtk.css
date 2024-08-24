@@ -2,13 +2,6 @@
 	background: #1F1F28;
 }
 
-.xfce4-panel#XfcePanelWindow {
-	border-bottom-left-radius: 13px;
-	border-bottom-right-radius: 13px;
-	border-top-left-radius: 13px;
-	border-top-right-radius: 13px; 	
-}
-
 .xfce4-panel .tasklist .toggle :checked {
   border-radius: 10px;
 }
