@@ -1,5 +1,5 @@
 .xfce4-panel {
-	background: #1F1F28;
+	background: #303030;
 }
 
 .xfce4-panel .tasklist .toggle :checked {
@@ -8,7 +8,7 @@
  
 .tasklist button:checked {
   background: dimgray;
-  border-bottom: 3px solid #C8C093;
+  border-bottom: 3px solid #86BBD8;
 }
  
 .flat,
@@ -32,7 +32,7 @@
   font-family: 'JetBrainsMono Nerd Font';
   font-size: 16px;
   border: 1px solid dimgray;
-  border-bottom: 3px solid #C8C093;
+  border-bottom: 3px solid #86BBD8;
   padding: 4px;
   background: dimgray;
 

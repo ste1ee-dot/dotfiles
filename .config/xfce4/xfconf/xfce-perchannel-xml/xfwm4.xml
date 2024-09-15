@@ -59,7 +59,7 @@
     <property name="snap_to_windows" type="bool" value="false"/>
     <property name="snap_width" type="int" value="10"/>
     <property name="vblank_mode" type="string" value="auto"/>
-    <property name="theme" type="string" value="Kanagawa-B"/>
+    <property name="theme" type="string" value="Default"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="title_alignment" type="string" value="center"/>
     <property name="title_font" type="string" value="Sans Bold 9"/>
@@ -88,6 +88,7 @@
       <value type="string" value="4"/>
     </property>
     <property name="margin_right" type="int" value="0"/>
-    <property name="margin_top" type="int" value="44"/>
+    <property name="margin_top" type="int" value="0"/>
+    <property name="margin_bottom" type="int" value="0"/>
   </property>
 </channel>
