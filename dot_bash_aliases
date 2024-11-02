@@ -1,0 +1,4 @@
+alias sudo='sudo '
+alias ls='ls -a --color'
+alias py='python3'
+alias chezmoi='/home/ste1ee/bin/chezmoi'

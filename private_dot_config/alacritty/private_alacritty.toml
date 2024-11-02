@@ -1,0 +1,4 @@
+[general]
+import = [
+    "/home/ste1ee/.config/alacritty/themes/themes/xterm.toml"
+]
