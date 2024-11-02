@@ -1,0 +1,36 @@
+set nocompatible              " required
+filetype off                  " required
+
+filetype plugin indent on    " required
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" Python standards
+au BufNewFile,BufRead *.py
+    \set tabstop=4
+    \set softtabstop=4
+    \set shiftwidth=4
+    \set textwidth=79
+    \set expandtab
+    \set autoindent
+    \set fileformat=unix
+
+" Define the BadWhitespace highlight group
+highlight BadWhitespace ctermbg=red guibg=red
+
+" Flag whitespace in py files
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Set encoding to utf-8
+set encoding=utf-8
+
+let python_highlight_all=1
+syntax on
+
+set clipboard=unnamed
+set relativenumber
