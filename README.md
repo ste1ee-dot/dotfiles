@@ -10,3 +10,9 @@ This setup currently only works on with APT and DNF package managers!
 export GIT_USERNAME=ste1ee
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GIT_USERNAME
 ```
+
+## How to run
+
+```shell
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init https://gitlab.com/ste1ee/dotfiles.git && ~/bin/chezmoi apply
+```
