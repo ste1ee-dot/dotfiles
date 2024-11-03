@@ -22,5 +22,6 @@
       community.general.flatpak:
         name:
           - org.gimp.GIMP
+          - com.stremio.Stremio
         state: present
 

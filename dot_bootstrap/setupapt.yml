@@ -22,5 +22,6 @@
           - make
           - flatpak
           - alacritty
+          - syncthing
         state: present
 

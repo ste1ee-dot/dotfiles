@@ -22,6 +22,8 @@
           - make
           - flatpak
           - alacritty
+          - syncthing
+          - keepassxc
         state: present
 
     - name: Install DNF plugins core
