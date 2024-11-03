@@ -21,6 +21,7 @@
           - tmux
           - make
           - flatpak
+          - alacritty
         state: present
 
     - name: Install DNF plugins core
