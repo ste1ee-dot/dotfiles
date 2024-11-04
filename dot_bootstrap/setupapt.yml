@@ -16,12 +16,12 @@
           - git
           - htop
           - vim
-          - firefox
           - gcc
           - tmux
           - make
           - flatpak
           - alacritty
           - syncthing
+          - keepassxc
         state: present
 

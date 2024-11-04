@@ -16,7 +16,6 @@
           - git
           - htop
           - vim
-          - firefox
           - gcc
           - tmux
           - make
