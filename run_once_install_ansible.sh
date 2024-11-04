@@ -25,9 +25,6 @@ else
     exit 1
 fi
 
-ansible-playbook ~/.bootstrap/setup.yml --ask-become-pass
-echo "Flatpak ansible done"
-
 if [ "$pkgmr" = "apt" ]; then
     ansible-playbook ~/.bootstrap/setupapt.yml --ask-become-pass
     echo "APT ansible done"
@@ -39,5 +36,7 @@ else
     exit 1
 fi
 
+ansible-playbook ~/.bootstrap/setup.yml --ask-become-pass
+echo "Flatpak ansible done"
 
 echo "Ansible installation complete."
