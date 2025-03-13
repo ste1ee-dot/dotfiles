@@ -23,6 +23,6 @@ case "${OS}" in
 esac
 
 ansible-playbook ~/.bootstrap/setup.yml --ask-become-pass
-ansible-playbook ~/.bootstarp/setup_flatpak.yml
+ansible-playbook ~/.bootstrap/setup_flatpak.yml
 
 echo "Ansible installation complete."
