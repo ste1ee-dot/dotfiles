@@ -25,4 +25,6 @@
           - flatpak
         state: present
 
-
+    - name: Install ghostty
+      command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+      become: true
