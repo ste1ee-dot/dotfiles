@@ -42,6 +42,5 @@
     - name: Install snap packages
       community.general.snap:
         name:
-          - nushell
           - ghostty
         classic: true

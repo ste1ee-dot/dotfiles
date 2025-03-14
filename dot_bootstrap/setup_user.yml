@@ -9,4 +9,4 @@
       become: true
       user:
         name: "{{ the_user }}"
-        shell: /bin/nu
+        shell: /usr/bin/nu
