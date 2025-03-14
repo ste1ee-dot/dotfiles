@@ -23,6 +23,13 @@
           - git
           - neovim
           - flatpak
+          - make
+          - unzip
+          - gcc
+          - ripgrep
+          - xclip
+          - fonts-noto-color-emoji
+          - golang-go
         state: present
 
     - name: Install snap packages
