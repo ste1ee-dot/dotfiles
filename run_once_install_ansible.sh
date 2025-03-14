@@ -24,5 +24,6 @@ esac
 
 ansible-playbook ~/.bootstrap/setup.yml --ask-become-pass
 ansible-playbook ~/.bootstrap/setup_flatpak.yml
+ansible-playbook ~/.bootstrap/setup_user.yml
 
 echo "Ansible installation complete."
