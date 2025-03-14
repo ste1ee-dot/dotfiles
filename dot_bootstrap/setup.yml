@@ -4,7 +4,7 @@
   become: true
   connection: local
   gather_facts: true
- 
+
   tasks:
 
     - name: Get the original user before privilege escalation
@@ -16,6 +16,12 @@
     - name: Set fact for the original user
       ansible.builtin.set_fact:
         remote_regular_user: "{{ original_user.stdout }}"
+
+    - name: Nvim repo
+      apt_repository:
+        validate_certs: no
+        repo: 'ppa:neovim-ppa/unstable'
+        state: present
 
     - name: Install packages
       ansible.builtin.apt:
