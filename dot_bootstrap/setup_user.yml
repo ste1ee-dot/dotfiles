@@ -1,12 +1,12 @@
 ---
-- name: set up nushell for user
+- name: Set up nushell for user
   hosts: localhost
   become: false
   vars:
     the_user: "{{ ansible_user_id }}"
   tasks:
-    - name: change user shell to nu
+    - name: Change default user shell to nushell
       become: true
       user:
         name: "{{ the_user }}"
-        shell: /usr/bin/nu
+        shell: /snap/bin/nu
