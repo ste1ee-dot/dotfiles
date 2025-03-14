@@ -9,4 +9,4 @@
       become: true
       user:
         name: "{{ the_user }}"
-        shell: /snap/bin/nu
+        shell: /bin/nu
