@@ -22,3 +22,4 @@ $env.config.show_banner = false
 alias ll = ls -la 
 alias la = ls -a
 alias chezmoi = ~/bin/chezmoi
+alias v = nvim
