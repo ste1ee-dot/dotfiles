@@ -36,11 +36,5 @@
           - xclip
           - fonts-noto-color-emoji
           - golang-go
-          - snapd
         state: present
 
-    - name: Install snap packages
-      community.general.snap:
-        name:
-          - ghostty
-        classic: true
