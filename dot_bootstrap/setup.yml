@@ -36,5 +36,9 @@
           - xclip
           - fonts-noto-color-emoji
           - golang-go
+          - wget
+          - tar
+          - fontconfig
+          - jq
         state: present
 
