@@ -1,6 +1,6 @@
 local lsp = require('lsp-zero')
-
 local cmp = require('cmp')
+
 cmp.setup({
 	mapping = {
 		['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -14,16 +14,20 @@ cmp.setup({
 	},
 })
 
-
 lsp.on_attach(function(client, bufnr)
-	local opts = {buffer = bufnr, remap = false}
+	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set('n', '<leader>gd', function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
 	vim.keymap.set('n', '<leader>gr', function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
 
+	vim.cmd([[
+		augroup QuickfixMappings
+			autocmd!
+			autocmd FileType qf nnoremap <buffer> <C-y> <CR>:cclose<CR>
+		augroup END
+	]])
 end)
 
 lsp.setup()
-
