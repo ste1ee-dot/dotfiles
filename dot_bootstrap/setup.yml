@@ -17,6 +17,12 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ original_user.stdout }}"
 
+    - name: Set up nvim unstalbe repo
+      apt_repository:
+        validate_certs: no
+        repo: 'ppa:neovim-ppa/unstable'
+        state: present
+
     - name: Install apt packages
       ansible.builtin.apt:
         name:
