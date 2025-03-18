@@ -26,6 +26,7 @@
     - name: Install apt packages
       ansible.builtin.apt:
         name:
+          - tmux
           - git
           - neovim
           - flatpak
