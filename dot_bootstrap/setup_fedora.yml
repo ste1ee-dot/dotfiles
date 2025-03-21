@@ -1,5 +1,6 @@
+
 ---
-- name: Machine setup
+- name: Machine setup Fedora
   hosts: localhost
   become: true
   connection: local
@@ -17,14 +18,21 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ original_user.stdout }}"
 
-    - name: Set up nvim unstalbe repo
-      apt_repository:
-        validate_certs: no
-        repo: 'ppa:neovim-ppa/unstable'
-        state: present
+    - name: Install Neovim Nightly
+      tasks:
+        - name: Enable the agriffis Neovim nightly COPR repository
+          dnf:
+            name: dnf-plugins-core
+            state: present
 
-    - name: Install apt packages
-      ansible.builtin.apt:
+        - name: Install Neovim nightly from COPR
+          dnf:
+            name: neovim
+            state: latest
+            enablerepo: copr:copr.fedorainfracloud.org:agriffis:neovim-nightly
+
+    - name: Install dnf packages
+      ansible.builtin.dnf:
         name:
           - tmux
           - git
@@ -35,11 +43,14 @@
           - gcc
           - ripgrep
           - xclip
-          - fonts-noto-color-emoji
-          - golang-go
+          - golang
           - wget
           - tar
           - fontconfig
           - jq
         state: present
 
+    - name: Install DNF plugins core
+      ansible.builtin.dnf:
+        name: dnf-plugins-core
+        state: present
