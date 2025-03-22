@@ -18,25 +18,11 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ original_user.stdout }}"
 
-    - name: Install Neovim Nightly
-      tasks:
-        - name: Enable the agriffis Neovim nightly COPR repository
-          dnf:
-            name: dnf-plugins-core
-            state: present
-
-        - name: Install Neovim nightly from COPR
-          dnf:
-            name: neovim
-            state: latest
-            enablerepo: copr:copr.fedorainfracloud.org:agriffis:neovim-nightly
-
     - name: Install dnf packages
       ansible.builtin.dnf:
         name:
           - tmux
           - git
-          - neovim
           - flatpak
           - make
           - unzip
