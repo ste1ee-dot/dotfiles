@@ -14,7 +14,7 @@ cmp.setup({
 	},
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set('n', '<leader>gd', function() vim.lsp.buf.definition() end, opts)
@@ -29,5 +29,12 @@ lsp.on_attach(function(client, bufnr)
 		augroup END
 	]])
 end)
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
+})
 
 lsp.setup()
