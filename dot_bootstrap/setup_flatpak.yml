@@ -27,6 +27,7 @@
       community.general.flatpak:
         name:
           - com.stremio.Stremio
+          - com.discordapp.Discord
         state: present
         method: user
 
