@@ -34,9 +34,11 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# Set i3 bar
+bar {
+    status_command i3status
+    tray_output primary
+}
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
