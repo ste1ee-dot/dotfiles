@@ -46,6 +46,10 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+# start a browser
+bindsym $mod+b exec firefox
+
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
