@@ -1,6 +1,6 @@
 # My Dotfiles
 
-My dotfiles are managed with [Chezmoi](https://www.chezmoi.io/) and [Ansible](https://docs.ansible.com/).
+My dotfiles are managed with [Chezmoi](https://www.chezmoi.io/).
 
 
 ## Installation
