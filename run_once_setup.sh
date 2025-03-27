@@ -3,7 +3,7 @@
 setup_fedora() {
     echo "Setting up Fedora."
 
-    sudo dnf install tmux git make unzip gcc nodejs nvm ripgrep xclip golang sqlite3 wget tar dnf-plugins-core flatpak kitty -y
+    sudo dnf install tmux git make unzip gcc nodejs npm ripgrep xclip golang sqlite3 wget tar dnf-plugins-core flatpak kitty -y
     sudo dnf autoremove -y
 
     echo "Fedora setup finished."
@@ -17,7 +17,7 @@ setup_ubuntu() {
     sudo apt-get update
     sudo apt-get upgrade -y
 
-    sudo apt-get install tmux git make unzip gcc nodejs nvm ripgrep xclip golang-go sqlite3 wget tar flatpak kitty -y
+    sudo apt-get install tmux git make unzip gcc nodejs npm ripgrep xclip golang-go sqlite3 wget tar flatpak kitty -y
 
     sudo apt autoremove -y
 
