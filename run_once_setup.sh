@@ -3,7 +3,7 @@
 setup_fedora() {
     echo "Setting up Fedora."
 
-    sudo dnf install tmux git make unzip gcc ripgrep xclip golang sqlite3 wget tar dnf-plugins-core flatpak
+    sudo dnf install tmux git make unzip gcc ripgrep xclip golang sqlite3 wget tar dnf-plugins-core flatpak -y
 
     echo "Fedora setup finished."
 }
@@ -16,9 +16,9 @@ setup_ubuntu() {
     sudo apt-get update
     sudo apt-get upgrade -y
 
-    sudo apt-get install tmux git make unzip gcc ripgrep xclip golang-go sqlite3 wget tar flatpak
+    sudo apt-get install tmux git make unzip gcc ripgrep xclip golang-go sqlite3 wget tar flatpak -y
 
-    sudo apt autoremove
+    sudo apt autoremove -y
 
     echo "Ubuntu setup finished."
 }
@@ -27,8 +27,8 @@ setup_flatpak() {
     echo "Installing flatpaks"
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-    flatpak install flathub com.stremio.Stremio
-    flatpak install flathub com.discordapp.Discord
+    flatpak install flathub com.stremio.Stremio -y
+    flatpak install flathub com.discordapp.Discord -y
 
     echo "Installed flatpaks."
 }
