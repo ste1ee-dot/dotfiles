@@ -3,7 +3,7 @@
 setup_fedora() {
     echo "Setting up Fedora."
 
-    sudo dnf install tmux git make unzip gcc nodejs npm ripgrep xclip golang sqlite3 wget tar dnf-plugins-core flatpak kitty -y
+    sudo dnf install tmux git make unzip gzip gcc nodejs npm ripgrep xclip golang sqlite3 wget tar dnf-plugins-core flatpak kitty xdotool -y
     sudo dnf autoremove -y
 
     echo "Fedora setup finished."
@@ -17,7 +17,7 @@ setup_ubuntu() {
     sudo apt-get update
     sudo apt-get upgrade -y
 
-    sudo apt-get install tmux git make unzip gcc nodejs npm ripgrep xclip golang-go sqlite3 wget tar flatpak kitty -y
+    sudo apt-get install tmux git make unzip gzip gcc nodejs npm ripgrep xclip golang-go sqlite3 wget tar flatpak kitty xdotool -y
 
     sudo apt autoremove -y
 
@@ -42,6 +42,16 @@ setup_general() {
     sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 
     echo "Neovim nightly installed"
+
+
+    echo "Setting up Uni."
+
+    curl -LO https://github.com/arp242/uni/releases/download/v2.8.0/uni-v2.8.0-linux-amd64.gz
+    gzip -d uni-v2.8.0-linux-amd64.gz
+    chmod +x uni-v2.8.0-linux-amd64
+    sudo mv uni-v2.8.0-linux-amd64 /usr/local/bin/uni
+
+    echo "Uni installed."
 }
 
 OS="$(uname -s)"
