@@ -7,8 +7,11 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'gopls',
         'lua_ls',
+        'eslint',
         'html',
         'cssls',
+        'bashls',
+        'jsonls',
     },
     handlers = {
         -- Default handler for all language servers
