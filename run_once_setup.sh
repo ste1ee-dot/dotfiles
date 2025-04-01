@@ -52,6 +52,11 @@ setup_general() {
     sudo mv uni-v2.8.0-linux-amd64 /usr/local/bin/uni
 
     echo "Uni installed."
+
+
+    echo "Setting up Atuin."
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+    echo "Atuin installed."
 }
 
 OS="$(uname -s)"
