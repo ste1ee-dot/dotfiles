@@ -36,16 +36,16 @@ setup_flatpak() {
 
 setup_general() {
     echo "Setting up Neovim nightly."
-    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
-    chmod u+x nvim-linux-x86_64.appimage
-    sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-arm64.appimage
+    chmod u+x nvim-linux-arm64.appimage
+    sudo mv nvim-linux-arm64.appimage /usr/local/bin/nvim
     echo "Neovim nightly installed"
 
     echo "Setting up Uni."
-    curl -LO https://github.com/arp242/uni/releases/download/v2.8.0/uni-v2.8.0-linux-amd64.gz
-    gzip -d uni-v2.8.0-linux-amd64.gz
-    chmod +x uni-v2.8.0-linux-amd64
-    sudo mv uni-v2.8.0-linux-amd64 /usr/local/bin/uni
+    curl -LO https://github.com/arp242/uni/releases/download/v2.8.0/uni-v2.8.0-linux-arm64.gz
+    gzip -d uni-v2.8.0-linux-arm64.gz
+    chmod +x uni-v2.8.0-linux-arm64
+    sudo mv uni-v2.8.0-linux-arm64 /usr/local/bin/uni
     echo "Uni installed."
 
     echo "Setting up Ble.sh"
