@@ -1,0 +1,159 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "//width": 1908,
+    "modules-left": [
+        "wlr/taskbar",
+        "custom/weather"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "pulseaudio",
+        "memory",
+        "temperature",
+        "battery",
+        "clock#date",
+        "clock#time",
+        "tray"
+    ],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
+    },
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}{capacity}%",
+        "format-discharging": "{icon}{capacity}%",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ],
+        "tooltip": true
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+    "clock#date": {
+        "interval": 10,
+        "format": " {:%e %b %Y}",
+        "tooltip-format": "{:%e %B %Y}"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%({load}){min_frequency}/{avg_frequency}/{max_frequency}GHz",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰑹 {percentage_used}%",
+        "states": {
+            "warning": 90,
+            "critical": 95
+        }
+    },
+    "network": {
+        "interval": 5,
+        "interface": "wlp1s0f0",
+        "format-wifi": " {signalStrength}% \"{essid}\"",
+        "format-ethernet": "  {ipaddr}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname}\n  {bandwidthUpBytes}\n  {bandwidthDownBytes}",
+        "tooltip-format-wifi": "{ifname}\n  {bandwidthUpBytes}\n  {bandwidthDownBytes}\nFrequency: {frequency}",
+        "tooltip-format-disconnected": "N/a",
+        "//tooltip-format": "{ifname}: {ipaddr}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+    "temperature": {
+        "//hwmon-path-abs": "/sys/class/thermal/thermal_zone0/hwmon1",
+        "//input-filename": "temp",
+        "critical-threshold": 80,
+        "interval": 5,
+        "format": "{icon}{temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "tooltip": true
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+    "custom/vpn": {
+        "format": "{}",
+        "exec": "~/.config/waybar/bin/wireguard.sh",
+        "return-type": "json",
+        "interval": 5
+    },
+    "custom/idling": {
+        "format": "{}",
+        "exec": "~/.config/waybar/bin/idling.sh",
+        "return-type": "json",
+        "interval": 1
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "custom/syncthing": {
+        "format": "{}",
+        "exec": "~/.config/waybar/bin/syncthing.sh",
+        "return-type": "json",
+        "interval": 1
+    },
+    "custom/weather": {
+        "format": "{}",
+        "exec": "~/.config/waybar/bin/weather.sh",
+        "return-type": "json",
+        "interval": 60
+    }
+}

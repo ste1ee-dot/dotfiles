@@ -1,0 +1,160 @@
+### Variables ###
+set $mod Mod1
+set $terminal kitty
+set $browser firefox
+set $emoji ~/Projects/scripts/emoji/emoji_float.sh
+set $volumestep 5
+
+### Font ###
+font pango:monospace 8
+
+### Startup Apps ###
+exec_always nm-applet
+exec_always $browser
+exec_always $terminal
+exec_always flatpak run com.discordapp.Discord
+exec_always flatpak run com.stremio.Stremio
+
+exec mako
+
+### Idle and Lock ###
+#exec_always swayidle -w \
+#  timeout 300 'swaylock -f -c 000000' \
+#  timeout 600 'swaymsg "output * dpms off"' \
+#  resume 'swaymsg "output * dpms on"' \
+#  before-sleep 'swaylock -f -c 000000'
+
+### Floating Modifier ###
+floating_modifier $mod
+
+### Keybindings ###
+bindsym $mod+Return exec $terminal
+bindsym $mod+b exec $browser
+bindsym $mod+e exec $emoji
+
+# App Launcher
+bindsym $mod+d exec wofi --show drun
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Move focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split containers
+bindsym $mod+v split v
+
+# Fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Layouts
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+
+# Floating toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Focus parent container
+bindsym $mod+a focus parent
+
+### Workspaces ###
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+### Assign apps to workspaces ###
+assign [class="firefox"] $ws1
+assign [class="discord"] $ws4
+assign [class="stremio"] $ws5
+assign [app_id="kitty"] $ws3
+
+### Resize Mode ###
+mode "resize" {
+  bindsym j resize shrink width 10 px
+  bindsym k resize grow height 10 px
+  bindsym l resize shrink height 10 px
+  bindsym semicolon resize grow width 10 px
+  bindsym Left resize shrink width 10 px
+  bindsym Down resize grow height 10 px
+  bindsym Up resize shrink height 10 px
+  bindsym Right resize grow width 10 px
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### Restart / Reload ###
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'"
+
+### Window Decorations ###
+client.focused          #83CAFA #51A2DA #FFFFFF #83CAFA   #51A2DA
+client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
+client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
+client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+client.background       #FFFFFF
+
+### Waybar ###
+exec_always waybar
+
+# Volume up
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+# Volume down
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+# Toggle mute
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+

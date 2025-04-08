@@ -1,0 +1,38 @@
+window {
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#inner-box {
+    background-color: #000000;
+}
+
+#outer-box {
+    background-color: #000000;
+}
+
+#scroll {
+    background-color: #000000;
+}
+
+#text {
+    padding: 5px;
+    color: #ffffff;
+}
+
+#entry:selected {
+    background-color: #285577;
+}
+
+#entry:selected #text {
+    color: #ffffff;
+}
