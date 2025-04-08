@@ -1,0 +1,7 @@
+alias sudo='sudo '
+alias ll='ls -la --color'
+alias la='ls -a --color'
+alias chezmoi='/home/stefan/bin/chezmoi'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
