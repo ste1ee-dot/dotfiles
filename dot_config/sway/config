@@ -15,6 +15,8 @@ exec_always flatpak run com.discordapp.Discord
 exec_always flatpak run com.stremio.Stremio
 
 exec mako
+exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 ### Floating Modifier ###
 floating_modifier $mod
@@ -26,6 +28,9 @@ bindsym $mod+e exec $emoji
 
 # App Launcher
 bindsym $mod+d exec wofi --show drun
+
+# Screenshot
+bindsym $mod+s exec grim -g "$(slurp)" - | swappy -f -
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -55,10 +60,6 @@ bindsym $mod+v split v
 
 # Fullscreen
 bindsym $mod+f fullscreen toggle
-
-# Layouts
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 
 # Floating toggle
 bindsym $mod+Shift+space floating toggle

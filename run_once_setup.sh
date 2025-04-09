@@ -21,6 +21,9 @@ packages=(
     wofi 
     mako 
     golang
+    grim
+    otf-font-awesome
+    swappy
 )
 
 flatpaks=(
@@ -30,45 +33,35 @@ flatpaks=(
 
 setup_fedora() {
     echo "Setting up Fedora."
-
     local fedora_packages=("${packages[@]/golang/golang}")
 
     for package in "${fedora_packages[@]}"; do
         sudo dnf install "$package" -y
     done
-
     sudo dnf autoremove -y
-
     echo "Fedora setup finished."
 }
 
 setup_ubuntu() {
     echo "Setting up Ubuntu."
-
     sudo apt update
     sudo apt upgrade -y
     sudo apt-get update
     sudo apt-get upgrade -y
-
     local ubuntu_packages=("${packages[@]/golang/golang-go}")
-
     for package in "${ubuntu_packages[@]}"; do
         sudo apt-get install "$package" -y
     done
-
     sudo apt autoremove -y
-
     echo "Ubuntu setup finished."
 }
 
 setup_flatpak() {
     echo "Installing flatpaks"
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
     for fltpk in "${flatpaks[@]}"; do
         flatpak install flathub "$fltpk" -y
     done
-
     echo "Installed flatpaks."
 }
 
@@ -94,6 +87,7 @@ setup_general() {
     echo "Setting up Atuin."
     curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
     echo "Atuin installed."
+
 }
 
 OS="$(uname -s)"
