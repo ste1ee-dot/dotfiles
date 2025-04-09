@@ -82,3 +82,5 @@ case "${OS}" in
         ;;
 esac
 
+rm ~/.bashrc
+ln -sf "$(pwd)/dot_bashrc" ~/.bashrc
