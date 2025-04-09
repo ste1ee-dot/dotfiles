@@ -10,19 +10,11 @@ font pango:monospace 8
 
 ### Startup Apps ###
 exec_always nm-applet
-exec_always $browser
 exec_always $terminal
 exec_always flatpak run com.discordapp.Discord
 exec_always flatpak run com.stremio.Stremio
 
 exec mako
-
-### Idle and Lock ###
-#exec_always swayidle -w \
-#  timeout 300 'swaylock -f -c 000000' \
-#  timeout 600 'swaymsg "output * dpms off"' \
-#  resume 'swaymsg "output * dpms on"' \
-#  before-sleep 'swaylock -f -c 000000'
 
 ### Floating Modifier ###
 floating_modifier $mod
@@ -112,10 +104,9 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 ### Assign apps to workspaces ###
-assign [class="firefox"] $ws1
-assign [class="discord"] $ws4
-assign [class="stremio"] $ws5
 assign [app_id="kitty"] $ws3
+assign [class="discord"] $ws4
+assign [app_id="com.stremio.stremio"] $ws5
 
 ### Resize Mode ###
 mode "resize" {

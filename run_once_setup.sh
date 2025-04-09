@@ -83,8 +83,6 @@ setup_general() {
     echo "Setting up Ble.sh"
     git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
     make -C ble.sh install PREFIX=~/.local
-    echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc
-    echo 'eval "$(atuin init bash)"' >> ~/.bashrc
     echo "Blesh set up."
 
     echo "Setting up Atuin."
@@ -113,6 +111,3 @@ case "${OS}" in
         exit 1
         ;;
 esac
-
-rm ~/.bashrc
-ln -sf "$(pwd)/dot_bashrc" ~/.bashrc
