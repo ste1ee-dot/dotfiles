@@ -23,6 +23,11 @@ packages=(
     golang
 )
 
+flatpaks=(
+    com.stremio.Stremio
+    com.discordapp.Discord
+)
+
 setup_fedora() {
     echo "Setting up Fedora."
 
@@ -60,8 +65,9 @@ setup_flatpak() {
     echo "Installing flatpaks"
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-    flatpak install flathub com.stremio.Stremio -y
-    flatpak install flathub com.discordapp.Discord -y
+    for fltpk in "${flatpaks[@]}"; do
+        flatpak install flathub "$fltpk" -y
+    done
 
     echo "Installed flatpaks."
 }
