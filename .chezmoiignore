@@ -2,3 +2,4 @@ README.md
 .config/nvim/plugin/packer_compiled.lua
 .bashrc
 .config/waybar/bin/state/header.txt
+.config/waybar/bin/state/cache.json

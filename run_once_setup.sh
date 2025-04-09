@@ -1,9 +1,37 @@
 #!/bin/bash
 
+packages=(
+    tmux 
+    git 
+    make 
+    gawk 
+    unzip 
+    gzip 
+    fzf 
+    gcc 
+    nodejs 
+    npm 
+    ripgrep 
+    sqlite3 
+    wget 
+    tar 
+    dnf-plugins-core 
+    flatpak 
+    kitty 
+    wofi 
+    mako 
+    golang
+)
+
 setup_fedora() {
     echo "Setting up Fedora."
 
-    sudo dnf install tmux git make gawk unzip gzip fzf gcc nodejs npm ripgrep golang sqlite3 wget tar dnf-plugins-core flatpak kitty wofi mako -y
+    local fedora_packages=("${packages[@]/golang/golang}")
+
+    for package in "${fedora_packages[@]}"; do
+        sudo dnf install "$package" -y
+    done
+
     sudo dnf autoremove -y
 
     echo "Fedora setup finished."
@@ -17,7 +45,11 @@ setup_ubuntu() {
     sudo apt-get update
     sudo apt-get upgrade -y
 
-    sudo apt-get install tmux git make gawk unzip gzip fzf gcc nodejs npm ripgrep golang-go sqlite3 wget tar flatpak kitty wofi mako -y
+    local ubuntu_packages=("${packages[@]/golang/golang-go}")
+
+    for package in "${ubuntu_packages[@]}"; do
+        sudo apt-get install "$package" -y
+    done
 
     sudo apt autoremove -y
 
