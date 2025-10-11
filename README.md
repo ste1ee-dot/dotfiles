@@ -2,8 +2,8 @@
 My dotfiles are managed with [stow](https://www.gnu.org/software/stow/).
 
 Required packages:
-- Neovim 0.12+
-- stow
+- [Neovim](https://neovim.io/) 0.12+
+- [Stow](https://www.gnu.org/software/stow/)
 
 ## Usage
 From the dotfiles directory:
