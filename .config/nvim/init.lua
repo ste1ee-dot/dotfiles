@@ -16,7 +16,10 @@ vim.o.softtabstop = 0
 -- =========================
 vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/stevearc/oil.nvim",
 })
+
+require "oil".setup()
 
 -- =========================
 -- LSP CONFIG
@@ -54,7 +57,7 @@ vim.diagnostic.config({
 -- KEY BINDINGS
 -- =========================
 vim.g.mapleader = " "
-vim.keymap.set('n', '<leader>p', ':update<CR> :Ex<CR>')
+vim.keymap.set('n', '<leader>p', ':Oil<CR>')
 vim.keymap.set('n', '<leader>c', ':set colorcolumn=80<CR>')
 vim.keymap.set('n', '<leader>x', ':set colorcolumn=0<CR>')
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
