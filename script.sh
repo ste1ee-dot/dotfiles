@@ -1,5 +1,5 @@
 #!/bin/sh
 
 stow . --adopt &&
-git restore
+git restore . &&
 stow .
