@@ -12,5 +12,5 @@ stow .
 ```
 Or use a one-liner:
 ```bash
-git clone git@github.com:ste1ee-dot/dotfiles.git && cd dotfiles && sh ./script.sh
+git clone git@github.com:ste1ee-dot/dotfiles.git && cd dotfiles && sh ./script.sh && cd /home/$USER
 ```
