@@ -17,3 +17,5 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias neovim='nvim'
+
+. "/home/ste1ee/.local/share/bob/env/env.sh"
