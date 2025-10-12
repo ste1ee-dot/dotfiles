@@ -17,14 +17,15 @@ vim.o.softtabstop = 0
 vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/stevearc/oil.nvim",
+	"https://github.com/ibhagwan/fzf-lua",
 })
 
 require "oil".setup({
-  view_options = {
-	show_hidden = true,
-  },
+	view_options = {
+		show_hidden = true,
+	},
 })
-
+require "fzf-lua".setup()
 -- =========================
 -- LSP CONFIG
 -- =========================
@@ -64,6 +65,7 @@ vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>p', ':Oil<CR>')
 vim.keymap.set('n', '<leader>c', ':set colorcolumn=80<CR>')
 vim.keymap.set('n', '<leader>x', ':set colorcolumn=0<CR>')
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+vim.keymap.set('n', '<leader>f', ':FzfLua global<CR>')
+vim.keymap.set('n', '<leader>o', vim.lsp.buf.format)
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })

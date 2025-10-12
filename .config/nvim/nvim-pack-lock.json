@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "fzf-lua": {
+      "rev": "db3ccff",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "nvim-lspconfig": {
       "rev": "ac98db2",
       "src": "https://github.com/neovim/nvim-lspconfig"
