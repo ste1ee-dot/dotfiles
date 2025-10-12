@@ -1,6 +1,7 @@
 -- =========================
 -- VIM OPTIONS
 -- =========================
+
 vim.o.number = true
 vim.o.signcolumn = "yes"
 vim.o.wrap = false
@@ -11,24 +12,61 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 0
 
+
+-- =========================
+-- CUSTOM HIGHLIGHTS
+-- =========================
+
+-- define highlights
+vim.cmd('highlight TodoHighlight guifg=#000000 guibg=#FFCC00 gui=bold ctermfg=220 ctermbg=NONE cterm=bold')
+vim.cmd('highlight FixHighlight guifg=#000000 guibg=#F21832 gui=bold ctermfg=220 ctermbg=NONE cterm=bold')
+
+-- add match for words
+vim.fn.matchadd('TodoHighlight', '\\<TODO\\>')
+vim.fn.matchadd('FixHighlight', '\\<FIXME\\>')
+
+-- reapply on buffer enter
+vim.api.nvim_create_autocmd('BufEnter', {
+	callback = function()
+		if vim.w._todo_matches then
+			for _, id in ipairs(vim.w._todo_matches) do pcall(vim.fn.matchdelete, id) end
+		end
+		vim.w._todo_matches = {}
+
+		table.insert(vim.w._todo_matches, vim.fn.matchadd('TodoHighlight', '\\<TODO\\>'))
+		table.insert(vim.w._todo_matches, vim.fn.matchadd('FixHighlight', '\\<FIXME\\>'))
+	end,
+})
+
+
 -- =========================
 -- VIM PACKAGES
 -- =========================
+
 vim.pack.add({
-	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/stevearc/oil.nvim",
-	"https://github.com/ibhagwan/fzf-lua",
+	"github.com/neovim/nvim-lspconfig",
+	"github.com/stevearc/oil.nvim",
+	"github.com/ibhagwan/fzf-lua",
+	"https://github.com/folke/lazydev.nvim",
 })
 
+
+-- =========================
+-- PACKAGE CONFIG
+-- =========================
+
+require "lazydev".setup({})
 require "oil".setup({
 	view_options = {
 		show_hidden = true,
 	},
 })
-require "fzf-lua".setup()
+
+
 -- =========================
 -- LSP CONFIG
 -- =========================
+
 vim.lsp.enable({ "lua_ls", "clangd", "basedpyright", "bashls" })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -45,9 +83,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 vim.cmd [[set completeopt+=menuone,noselect,popup]]
 
+
 -- =========================
 -- DIAGNOSTICS
 -- =========================
+
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = "●",
@@ -58,9 +98,11 @@ vim.diagnostic.config({
 	update_in_insert = false,
 })
 
+
 -- =========================
 -- KEY BINDINGS
 -- =========================
+
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>p', ':Oil<CR>')
 vim.keymap.set('n', '<leader>c', ':set colorcolumn=80<CR>')

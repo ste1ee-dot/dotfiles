@@ -4,6 +4,10 @@
       "rev": "db3ccff",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "lazydev.nvim": {
+      "rev": "e28ce52",
+      "src": "https://github.com/folke/lazydev.nvim"
+    },
     "nvim-lspconfig": {
       "rev": "ac98db2",
       "src": "https://github.com/neovim/nvim-lspconfig"
