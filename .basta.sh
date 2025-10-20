@@ -1,4 +1,5 @@
 # License at bottom
+sleep .05
 
 [[ $- == *i* ]] || return 0
 
@@ -114,8 +115,8 @@ basta.update_status()
   local status_date=$(date +%m-%d/%H:%M)
 
   while true; do
-    local status=$'\e[7m'$CURRENT$'\e[m '" $dots"
-    local status_len=$((${#status} - ${#status_esc}))
+    local status=$'\e[7m'$CURRENT$'\e[m '
+	local status_len=$((${#status} - ${#status_esc}))
     [ $status_len -le $COLUMNS ] && break
     [ "${pwd#/*/}" == "$pwd" ] && break
     pwd=${pwd#/}
@@ -412,3 +413,4 @@ basta_executing=
 # CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+

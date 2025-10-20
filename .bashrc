@@ -8,6 +8,7 @@
 # VARIABLES
 export EDITOR="nvim"															#sets the defualt editor
 export NOTESPATH="/home/$USER/Documents/notes"									#sets the path to my notes
+export CURRENT="No mode"
 
 
 # ALIASES

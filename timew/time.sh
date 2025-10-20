@@ -12,7 +12,7 @@ selected=$(printf "%s\n" "${CATEGORIES[@]}" | fzf --margin 10% --color="bw")
 
 if [[ "$selected" == "STOP" ]]; then
 	timew stop
-	export CURRENT=""
+	export CURRENT="No mode"
 else
 	timew start "$selected"
 	export CURRENT="$selected"
