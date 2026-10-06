@@ -1,0 +1,7 @@
+[soe][Compressor#0]
+attack=15
+makeup=2
+ratio=2.5
+release=120
+sidechainLookahead=2
+threshold=-15

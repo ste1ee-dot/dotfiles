@@ -6,7 +6,7 @@ nautilus\
 rofi\
 firefox
 
-easyeffects\
+easyeffects - configured specifically for my Thinkpad T480 speakers\
 quickshell\
 hyprpaper
 

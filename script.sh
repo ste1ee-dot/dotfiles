@@ -19,3 +19,7 @@ cp -rf $dotfiles_dir/.config/hypr/ $HOME/.config/hypr/
 # Quickshell
 rm -rf $HOME/.config/quickshell/
 cp -rf $dotfiles_dir/.config/quickshell/ $HOME/.config/quickshell/
+
+# Easyeffects
+rm -rf $HOME/.config/easyeffects/
+cp -rf $dotfiles_dir/.config/easyeffects/ $HOME/.config/easyeffects/
