@@ -15,3 +15,7 @@ cp -rf $dotfiles_dir/.config/vis/ $HOME/.config/vis/
 # Hypr
 rm -rf $HOME/.config/hypr/
 cp -rf $dotfiles_dir/.config/hypr/ $HOME/.config/hypr/
+
+# Quickshell
+rm -rf $HOME/.config/quickshell/
+cp -rf $dotfiles_dir/.config/quickshell/ $HOME/.config/quickshell/
