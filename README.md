@@ -23,8 +23,12 @@ grim\
 slurp\
 hyprshot\
 \
+
+#### Description:
 Dotfiles I use on my laptop.\
 Hyprland + Quickshell setup.\
 Editors vis + emacs\
 \
+
+#### Notes:
 Make sure you clone with '--recurse-submodules'.
