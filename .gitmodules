@@ -1,0 +1,12 @@
+[submodule ".config/vis/plugins/vis-autoclose"]
+	path = .config/vis/plugins/vis-autoclose
+	url = https://codeberg.org/luxanna/vis-autoclose.git
+[submodule ".config/vis/plugins/vis-colorizer"]
+	path = .config/vis/plugins/vis-colorizer
+	url = https://github.com/thimc/vis-colorizer
+[submodule ".config/vis/plugins/vis-cursormode"]
+	path = .config/vis/plugins/vis-cursormode
+	url = https://github.com/ste1ee-dot/vis-cursormode
+[submodule ".config/vis/plugins/vis-lspc"]
+	path = .config/vis/plugins/vis-lspc
+	url = https://codeberg.org/muhq/vis-lspc
