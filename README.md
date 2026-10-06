@@ -25,16 +25,16 @@
 kitty\
 nautilus\
 rofi\
-firefox\
+firefox
 
 easyeffects\
 quickshell\
-hyprpaper\
+hyprpaper
 
 xdg-desktop-portal\
 xdg-desktop-portal-hyprland\
 xdg-desktop-portal-gtk\
-xdg-desktop-portal-gnome\
+xdg-desktop-portal-gnome
 
 wireplumber\
 wl-clipboard\
@@ -42,7 +42,7 @@ playerctl\
 brightnessctl\
 grim\
 slurp\
-hyprshot\
+hyprshot
 \
 Dotfiles I use on my laptop.\
 Hyprland + Quickshell setup.\
