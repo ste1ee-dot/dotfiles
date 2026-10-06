@@ -42,7 +42,7 @@ playerctl\
 brightnessctl\
 grim\
 slurp\
-hyprshot
+hyprshot\
 \
 Dotfiles I use on my laptop.\
 Hyprland + Quickshell setup.\
