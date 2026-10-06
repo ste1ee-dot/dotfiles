@@ -21,12 +21,12 @@ playerctl\
 brightnessctl\
 grim\
 slurp\
-hyprshot\
+hyprshot
 
 #### Description:
 Dotfiles I use on my laptop.\
 Hyprland + Quickshell setup.\
-Editors vis + emacs\
+Editors vis + emacs
 
 #### Notes:
 Make sure you clone with '--recurse-submodules'.
