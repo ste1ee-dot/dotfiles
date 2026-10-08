@@ -14,23 +14,30 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
-
 ------------------
 ---- MONITORS ----
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "1.20",
+    output   = "eDP-1",
+    mode     = "1920x1080@60",
+    position = "0x0",
+    scale    = "1.0",
 })
 
 -- unscale XWayland
 hl.config({
   xwayland = {
     force_zero_scaling = true
+  },
+
+  cursor = {
+      no_hardware_cursors = true
+  },
+
+  render = {
+      direct_scanout = 1
   }
 })
 
